@@ -1,0 +1,48 @@
+.game-container-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 居中子元素 */
+    padding: 20px;
+    background-color: #fff; /* Wrapper背景 */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+.puzzle-game-container {
+  background: #f0f0f0; /* 游戏区域背景色 */
+}
+
+.puzzle-game-title {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.puzzle-game-message {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  font-size: 20px;
+  color: #28a745; 
+  font-weight: bold;
+}
+
+/* 重新开始按钮 (放在 game-container-wrapper 外) */
+.puzzle-game-btn {
+  display: block; /* 让按钮成为块级元素 */
+  margin-top: 20px; /* 与游戏区域的间距 */
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  transition: background-color 0.2s ease;
+}
+
+.puzzle-game-btn:hover {
+  background-color: #e0e0e0;
+}

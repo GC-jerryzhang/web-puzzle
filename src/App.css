@@ -1,0 +1,7 @@
+.app-root {
+  min-height: 100vh;
+  background: linear-gradient(120deg, #e6ecfc 40%, #f0f7fc 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

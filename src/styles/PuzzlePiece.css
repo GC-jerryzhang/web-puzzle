@@ -1,0 +1,27 @@
+.puzzle-piece {
+  border: 1px solid #ccc; /* 边框便于区分 */
+  box-sizing: border-box; /* 边框包含在宽高内 */
+  user-select: none; /* 禁止选中文字 */
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+}
+
+/* 拖拽时的样式反馈 */
+.puzzle-piece.dragging {
+    opacity: 0.7;
+    z-index: 10; /* 拖拽时层级提高 */
+    cursor: grabbing;
+}
+
+/* 吸附到正确位置后的样式 */
+.puzzle-piece.snapped {
+    border-color: transparent; /* 吸附后边框消失 */
+    cursor: default;
+    pointer-events: none; /* 吸附后不再响应鼠标事件 */
+    z-index: 1; /* 吸附后层级在普通块之上 */
+}
+
+.puzzle-piece:hover:not(.snapped) {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3); /* 悬停阴影 */
+}

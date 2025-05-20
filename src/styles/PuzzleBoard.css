@@ -1,0 +1,6 @@
+.puzzle-board {
+  position: relative; 
+  margin: 0 auto; /* 居中显示板子 */
+  border: 2px dashed #999; /* 目标区域边框 */
+  box-sizing: border-box;
+}
