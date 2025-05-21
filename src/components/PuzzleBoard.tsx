@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
-import type { Piece, PuzzleConfig } from '../types/puzzle';
-import '../styles/PuzzleBoard.css';
+import type { PuzzleConfig } from '../types/puzzle';
+import styles from '../styles/PuzzleBoard.module.css';
 
 interface PuzzleBoardProps {
   config: PuzzleConfig; // 拼图配置
@@ -38,7 +38,7 @@ const PuzzleBoard: React.FC<PuzzleBoardProps> = ({
     // 拼图板的DOM元素
     <div
       ref={boardRef} // 绑定ref以获取DOM元素
-      className="puzzle-board"
+      className={styles['puzzle-board']}
       style={{
         width: `${config.boardSize}px`,
         height: `${config.boardSize}px`,

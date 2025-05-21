@@ -1,6 +1,6 @@
 import React from 'react';
 import { type Piece } from '../types/puzzle';
-import '../styles/PuzzlePiece.css';
+import styles from '../styles/PuzzlePiece.module.css';
 
 interface PuzzlePieceProps {
   piece: Piece;
@@ -12,7 +12,7 @@ interface PuzzlePieceProps {
 }
 
 const PuzzlePiece: React.FC<PuzzlePieceProps> = ({
-  piece, gridSize, imageUrl, boardSize, onDragStart, isDragging
+  piece, gridSize, imageUrl, boardSize, onDragStart, isDragging,
 }) => {
   const row = Math.floor(piece.correctIndex / gridSize);
   const col = piece.correctIndex % gridSize;
@@ -33,7 +33,7 @@ const PuzzlePiece: React.FC<PuzzlePieceProps> = ({
 
   return (
     <div
-      className={`puzzle-piece ${piece.isSnapped ? 'snapped' : ''} ${isDragging ? 'dragging' : ''}`}
+      className={styles['puzzle'] + ` ${piece.isSnapped ? 'snapped' : ''} ${isDragging ? 'dragging' : ''}`}
       style={{
         position: 'absolute',
         left: `${piece.x}px`, // 使用 piece.x, piece.y 作为绝对定位坐标
@@ -45,13 +45,13 @@ const PuzzlePiece: React.FC<PuzzlePieceProps> = ({
         backgroundPosition: backgroundPosition,
         transition: piece.isSnapped ? 'left 0.2s ease-out, top 0.2s ease-out' : 'none',
         cursor: piece.isSnapped ? 'default' : 'grab',
-        pointerEvents: piece.isSnapped ? 'none' : 'auto', // 如果希望吸附后不可拖拽，取消注释
+        // pointerEvents: piece.isSnapped ? 'none' : 'auto', // 如果希望吸附后不可拖拽，取消注释
         zIndex: isDragging ? 10 : (piece.isSnapped ? 1 : 0), // 拖拽时层级最高，吸附次之
       }}
-      draggable={!piece.isSnapped} // 吸附后禁止拖拽
+      draggable={true} // 吸附后是否禁止拖拽
       onDragStart={handleDragStart}
     >
-       <div style={{ color: 'white', fontSize: '20px', textShadow: '1px 1px 2px black' }}>{piece.correctIndex}</div> 
+       {/* <div style={{ color: 'white', fontSize: '20px', textShadow: '1px 1px 2px black' }}>{piece.correctIndex}</div>  */}
     </div>
   );
 };

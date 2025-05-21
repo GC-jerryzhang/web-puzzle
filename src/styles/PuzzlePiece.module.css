@@ -18,7 +18,7 @@
 .puzzle-piece.snapped {
     border-color: transparent; /* 吸附后边框消失 */
     cursor: default;
-    pointer-events: none; /* 吸附后不再响应鼠标事件 */
+    /* pointer-events: none; 吸附后不再响应鼠标事件 */
     z-index: 1; /* 吸附后层级在普通块之上 */
 }
 
