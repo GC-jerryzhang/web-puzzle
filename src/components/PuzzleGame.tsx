@@ -310,7 +310,7 @@ const PuzzleGame: React.FC<PuzzleGameProps> = ({ config }) => {
       setPieces(newPieces); // 更新状态，触发重新渲染
 
       // 检查游戏是否完成
-      const isGameComplete = checkCompleted(newPieces);
+      const isGameComplete = checkCompleted(newPieces, config, boardRelativePosition.current);
       console.log('Check Completed:', isGameComplete);
       setIsCompleted(isGameComplete); // 更新完成状态
 
